@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERTITORE VALUTE</title>
+    <script>
+     function convert(){
+
+        let controval;
+        let val= document.getElementById("value").value;
+        let select= document.getElementById("tipo").value;
+
+        let risultato;
+
+        if(select==="GPD"){
+            risultato=val* 1.17;
+
+        } else if (select==="USD"){
+            risultato= val*0.93;
+        }
+      document.getElementById("risultato").value=risultato;
+        }
+
+        function cancella(){
+            document.getElementById("value").value="";
+            document.getElementById("risultato").value="";
+        }
+
+    
+    </script>
+</head>
+<body>
+    
+    <h1>Convertitore valute</h1>
+    <br>
+    <label> Valore in $:</label>
+    <br>
+    <input type="number" id="value" placeholder="inserire valore">
+    <br>
+    <select id="tipo">
+        <option value="USD" id="dollar">$ dollari USA</option>
+        <option value="GPD" id="sterline">£ sterline inglesi</option>
+
+
+    </select>
+    <br>
+    <label id="ris">Risultato:</label>
+    <br>
+    <input type="text" id="risultato">
+    <br><br>
+    <button onclick="convert()">Conversione</button>
+    <button onclick="cancella()">Cancella</button>
+
+
+</body>
+</html>
