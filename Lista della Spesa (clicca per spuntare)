@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ font-family: arial;padding:40px; background:rgb(175, 175, 180)}
+        .lined{text-decoration: line-through;}
+        .non-lined{text-decoration: line;}
+    </style>
+</head>
+<body>
+    <h1>Lista della spesa</h1>
+    <h2>Modificare le classi degli elementi</h2>
+
+    <ul class="lista">
+      <li class="non-lined">Pasta</li>
+      <li class="non-lined">Pane</li>
+      <li class="non-lined">Uova</li>
+      <li class="non-lined">Pomodoro</li>
+      <li class="non-lined">Insalata</li>
+    </ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("li").on('click', function(){
+            if($(this).hasClass('non-lined')){
+                $(this).removeClass('non-lined');
+                $(this).addClass('lined');
+            }else if($(this).hasClass('lined')) {
+                $(this).removeClass('lined');  
+                $(this).addClass('non-lined');
+            }
+                
+            });
+
+    
+        
+    });
+</script>
+
+    
+</body>
+</html>
